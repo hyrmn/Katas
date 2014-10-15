@@ -5,16 +5,18 @@ fixie.RunAllTests();
 
 public class Game
 {
-	private int score;
+	private int[] rolls = new int[21];
+	private int currentRoll = 0;
 	
 	public void Roll(int pins)
 	{
-		score += pins;
+		rolls[currentRoll] = pins;
+		currentRoll++;
 	}
 	
 	public int Score()
 	{
-		return score;
+		return rolls.Sum();
 	}
 }
 
