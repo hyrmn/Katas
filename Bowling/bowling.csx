@@ -32,7 +32,18 @@ public class GameTests
 	public void All_one_pin_rolls()
 	{
 		RollMany(rolls: 20, pins: 1);
+
 		game.Score().ShouldBe(20);
+	}
+	
+	public void Roll_one_spare()
+	{
+		game.Roll(5);
+		game.Roll(5); //spare
+		game.Roll(3);
+		RollMany(rolls: 17, pins: 0);
+
+		game.Score().ShouldBe(16);
 	}
 	
 	private void RollMany(int rolls, int pins)
