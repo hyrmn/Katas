@@ -36,15 +36,15 @@ public class GameTests
 		game.Score().ShouldBe(20);
 	}
 	
-	public void Roll_one_spare()
-	{
-		game.Roll(5);
-		game.Roll(5); //spare
-		game.Roll(3);
-		RollMany(rolls: 17, pins: 0);
+//	public void Roll_one_spare()
+//	{
+//		game.Roll(5);
+//		game.Roll(5); //spare
+//		game.Roll(3);
+//		RollMany(rolls: 17, pins: 0);
 
-		game.Score().ShouldBe(16);
-	}
+//		game.Score().ShouldBe(16);
+//	}
 	
 	private void RollMany(int rolls, int pins)
 	{
