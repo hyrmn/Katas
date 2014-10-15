@@ -20,27 +20,26 @@ public class Game
 
 public class GameTests
 {
+	private Game game = new Game();
+	
 	public void Gutter_game_has_zero_score()
 	{
-		var game = new Game();
-		
-		for(var roll = 0; roll < 20; roll++)
-		{
-			game.Roll(0);
-		}
+		RollMany(rolls: 20, pins: 0);
 		
 		game.Score().ShouldBe(0);
 	}
 	
 	public void All_one_pin_rolls()
 	{
-		var game = new Game();
-		
-		for(var roll = 0; roll < 20; roll++)
-		{
-			game.Roll(1);
-		}
-		
+		RollMany(rolls: 20, pins: 1);
 		game.Score().ShouldBe(20);
+	}
+	
+	private void RollMany(int rolls, int pins)
+	{
+		for(var roll = 0; roll < rolls; roll++)
+		{
+			game.Roll(pins);
+		}
 	}
 }
