@@ -28,4 +28,16 @@ public class GameTests
 		
 		game.Score().ShouldBe(0);
 	}
+	
+	public void All_one_pin_rolls()
+	{
+		var game = new Game();
+		
+		for(var roll = 0; roll < 20; roll++)
+		{
+			game.Roll(1);
+		}
+		
+		game.Score().ShouldBe(20);
+	}
 }
