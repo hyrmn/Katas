@@ -21,6 +21,11 @@ public class Game
 		
 		for(var frame = 0; frame < 10; frame++)
 		{
+			if(rolls[roll] == 10)
+			{
+				score += rolls[roll] + rolls[roll+1] + rolls[roll+2];
+				roll += 1;
+			}
 			if(IsSpare(roll))
 			{
 				score += rolls[roll] + rolls[roll+1] + rolls[roll+2];
