@@ -63,16 +63,16 @@ public class GameTests
 		game.Score().ShouldBe(16);
 	}
 	
-//	public void Roll_10_over_two_frames()
-//	{
-//		game.Roll(0);
-//		game.Roll(5);
-//		game.Roll(5); 
-//		game.Roll(3);
-//		RollMany(rolls: 16, pins: 0);
+	public void Roll_10_over_two_frames()
+	{
+		game.Roll(0);
+		game.Roll(5);
+		game.Roll(5); 
+		game.Roll(3);
+		RollMany(rolls: 16, pins: 0);
 
-//		game.Score().ShouldBe(13);
-//	}
+		game.Score().ShouldBe(13);
+	}
 	
 	private void RollMany(int rolls, int pins)
 	{
