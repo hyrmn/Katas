@@ -23,7 +23,7 @@ public class Game
 		{
 			score += rolls[roll] + rolls[roll+1];
 			
-			if(rolls[roll] + rolls[roll+1] == 10)
+			if(IsSpare(roll))
 			{
 				score += rolls[roll+2];
 			}
@@ -32,6 +32,11 @@ public class Game
 		}
 		
 		return score;
+	}
+	
+	private bool IsSpare(int roll)
+	{
+		return rolls[roll] + rolls[roll+1] == 10;
 	}
 }
 
@@ -55,8 +60,7 @@ public class GameTests
 	
 	public void Roll_one_spare()
 	{
-		game.Roll(5);
-		game.Roll(5); //spare
+		RollSpare();
 		game.Roll(3);
 		RollMany(rolls: 17, pins: 0);
 
@@ -72,6 +76,12 @@ public class GameTests
 		RollMany(rolls: 16, pins: 0);
 
 		game.Score().ShouldBe(13);
+	}
+	
+	private void RollSpare()
+	{
+		game.Roll(5);
+		game.Roll(5); 
 	}
 	
 	private void RollMany(int rolls, int pins)
