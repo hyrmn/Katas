@@ -17,15 +17,18 @@ public class Game
 	public int Score()
 	{
 		var score = 0;
-				
-		for(var roll = 0; roll < 20; roll++)
+		var roll = 0;
+		
+		for(var frame = 0; frame < 10; frame++)
 		{
+			score += rolls[roll] + rolls[roll+1];
+			
 			if(rolls[roll] + rolls[roll+1] == 10)
 			{
 				score += rolls[roll+2];
 			}
 			
-			score += rolls[roll];
+			roll += 2;
 		}
 		
 		return score;
