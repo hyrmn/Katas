@@ -10,7 +10,7 @@ public class Game
 	
 	public void Roll(int pins)
 	{
-		if(currentRoll == 21) 
+		if(GameIsFinished()) 
 		{
 			return;
 		}
@@ -43,6 +43,11 @@ public class Game
 		}
 		
 		return score;
+	}
+	
+	private bool GameIsFinished()
+	{
+		return currentRoll == 21;
 	}
 	
 	private bool IsStrike(int roll)
