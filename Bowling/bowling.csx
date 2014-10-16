@@ -21,14 +21,16 @@ public class Game
 		
 		for(var frame = 0; frame < 10; frame++)
 		{
-			score += rolls[roll] + rolls[roll+1];
-			
 			if(IsSpare(roll))
 			{
-				score += rolls[roll+2];
+				score += rolls[roll] + rolls[roll+1] + rolls[roll+2];
+				roll += 2;
 			}
-			
-			roll += 2;
+			else
+			{
+				score += rolls[roll] + rolls[roll+1];
+				roll += 2;
+			}
 		}
 		
 		return score;
