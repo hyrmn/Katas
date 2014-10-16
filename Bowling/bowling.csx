@@ -80,15 +80,15 @@ public class GameTests
 		game.Score().ShouldBe(13);
 	}
 	
-//	public void Roll_one_strike()
-//	{
-//		game.Roll(10);
-//		game.Roll(3);
-//		game.Roll(4); 
-//		RollMany(rolls: 17, pins: 0);
+	public void Roll_one_strike()
+	{
+		game.Roll(10);
+		game.Roll(3);
+		game.Roll(4); 
+		RollMany(rolls: 17, pins: 0);
 
-//		game.Score().ShouldBe(24);
-//	}	
+		game.Score().ShouldBe(24);
+	}	
 	
 	private void RollSpare()
 	{
