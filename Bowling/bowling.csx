@@ -21,7 +21,7 @@ public class Game
 		
 		for(var frame = 0; frame < 10; frame++)
 		{
-			if(rolls[roll] == 10)
+			if(IsStrike(roll))
 			{
 				score += rolls[roll] + rolls[roll+1] + rolls[roll+2];
 				roll += 1;
@@ -39,6 +39,11 @@ public class Game
 		}
 		
 		return score;
+	}
+	
+	private bool IsStrike(int roll)
+	{
+		return rolls[roll] == 10;
 	}
 	
 	private bool IsSpare(int roll)
@@ -87,7 +92,7 @@ public class GameTests
 	
 	public void Roll_one_strike()
 	{
-		game.Roll(10);
+		RollStrike();
 		game.Roll(3);
 		game.Roll(4); 
 		RollMany(rolls: 17, pins: 0);
@@ -99,6 +104,11 @@ public class GameTests
 	{
 		game.Roll(5);
 		game.Roll(5); 
+	}
+	
+	private void RollStrike()
+	{
+		game.Roll(10);
 	}
 	
 	private void RollMany(int rolls, int pins)
