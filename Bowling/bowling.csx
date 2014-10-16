@@ -23,17 +23,17 @@ public class Game
 		{
 			if(IsStrike(roll))
 			{
-				score += rolls[roll] + rolls[roll+1] + rolls[roll+2];
+				score += rolls[roll] + StrikeBonus(roll);
 				roll += 1;
 			}
 			if(IsSpare(roll))
 			{
-				score += rolls[roll] + rolls[roll+1] + rolls[roll+2];
+				score += ScoreForFrame(roll) + SpareBonus(roll);
 				roll += 2;
 			}
 			else
 			{
-				score += rolls[roll] + rolls[roll+1];
+				score += ScoreForFrame(roll);
 				roll += 2;
 			}
 		}
@@ -49,6 +49,21 @@ public class Game
 	private bool IsSpare(int roll)
 	{
 		return rolls[roll] + rolls[roll+1] == 10;
+	}
+	
+	private int ScoreForFrame(int roll)
+	{
+		return rolls[roll] + rolls[roll+1];
+	}
+	
+	private int SpareBonus(int roll)
+	{
+		return rolls[roll+2]; 
+	}
+
+	private int StrikeBonus(int roll)
+	{
+		return rolls[roll+1] + rolls[roll+2]; 
 	}
 }
 
