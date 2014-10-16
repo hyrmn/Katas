@@ -122,6 +122,11 @@ public class GameTests
 		game.Score().ShouldBe(300);
 	}	
 	
+	public void Roll_too_many()
+	{
+		Should.NotThrow(() => RollMany(rolls: 22, pins: 0));
+	}	
+	
 	private void RollSpare()
 	{
 		game.Roll(5);
