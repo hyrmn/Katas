@@ -10,6 +10,10 @@ public class Game
 	
 	public void Roll(int pins)
 	{
+		if(currentRoll == 21) 
+		{
+			return;
+		}
 		rolls[currentRoll] = pins;
 		currentRoll++;
 	}
