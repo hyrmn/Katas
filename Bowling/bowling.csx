@@ -26,7 +26,7 @@ public class Game
 				score += rolls[roll] + StrikeBonus(roll);
 				roll += 1;
 			}
-			if(IsSpare(roll))
+			else if(IsSpare(roll))
 			{
 				score += ScoreForFrame(roll) + SpareBonus(roll);
 				roll += 2;
@@ -113,6 +113,13 @@ public class GameTests
 		RollMany(rolls: 17, pins: 0);
 
 		game.Score().ShouldBe(24);
+	}	
+	
+	public void Roll_perfect_game()
+	{
+		RollMany(rolls: 12, pins: 10);
+
+		game.Score().ShouldBe(300);
 	}	
 	
 	private void RollSpare()
