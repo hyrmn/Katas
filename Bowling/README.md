@@ -29,6 +29,6 @@ You can then run the script (note, you need to run in debug)
 > scriptcs bowling.csx -debug
 ```
 
-All steps in the kata, as I go through them, are commits on the bow.csx. So, start from the first commit if you want to see how I go through red/green/refactor (note, only green and refactor steps are committed)
+All steps in the kata, as I go through them, are commits on the bow.csx. So, start from the first commit if you want to see how I'm going through red/green/refactor with Uncle Bob's kata.
 
 Not claiming this is the right or best impl or approach, but I'm branching out a little by doing this in the open.
