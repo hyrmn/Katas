@@ -5,19 +5,23 @@ fixie.RunAllTests();
 
 public class Fizzer
 {
+	private static Func<int, bool> IsFizz = number => number % 3 == 0;
+	private static Func<int, bool> IsBuzz = number => number % 5 == 0;
+	private static Func<int, bool> IsFizzbuzz = number => IsFizz(number) && IsBuzz(number);
+	
 	public string Answer(int number)
 	{
-		if(number % 15 == 0)
+		if(IsFizzbuzz(number))
 		{
 			return "fizzbuzz";
 		}
 		
-		if(number % 3 == 0)
+		if(IsFizz(number))
 		{
 			return "fizz";
 		}
 		
-		if(number % 5 == 0)
+		if(IsBuzz(number))
 		{
 			return "buzz";
 		}
