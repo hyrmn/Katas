@@ -18,4 +18,10 @@ public class FizzerTests
 		var fizzer = new Fizzer();
 		fizzer.Answer(1).ShouldBe("1");
 	}
+	
+	public void Fizzed_3_returns_fizz()
+	{
+		var fizzer = new Fizzer();
+		fizzer.Answer(3).ShouldBe("fizz");
+	}
 }
