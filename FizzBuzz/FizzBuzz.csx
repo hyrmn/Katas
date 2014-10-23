@@ -7,7 +7,7 @@ public class Fizzer
 {
 	public string Answer(int number)
 	{
-		throw new NotImplementedException();
+		return number.ToString();
 	}
 }
 
