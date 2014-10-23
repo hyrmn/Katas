@@ -12,6 +12,11 @@ public class Fizzer
 			return "fizz";
 		}
 		
+		if(number % 5 == 0)
+		{
+			return "buzz";
+		}
+		
 		return number.ToString();
 	}
 }
