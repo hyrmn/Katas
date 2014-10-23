@@ -44,4 +44,9 @@ public class FizzerTests
 	{
 		fizzer.Answer(5).ShouldBe("buzz");
 	}
+	
+	public void Fizzed_15_returns_fizzbuzz()
+	{
+		fizzer.Answer(15).ShouldBe("fizzbuzz");
+	}
 }
