@@ -7,7 +7,7 @@ public class FizzBuzz
 {
 	public string Answer(int number)
 	{
-		throw new NotImplementedException();
+		return "Fizz";
 	}
 }
 
