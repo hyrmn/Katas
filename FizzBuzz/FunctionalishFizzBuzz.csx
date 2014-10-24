@@ -18,17 +18,15 @@ public class FizzBuzz
 
 public class FizzBuzzTests
 {
+	private readonly FizzBuzz fizzer = new FizzBuzz();
+	
 	public void Can_convert_3_to_fizz()
 	{
-		var fizzer = new FizzBuzz();
-		
 		fizzer.Answer(3).ShouldBe("Fizz");
 	}
 	
 	public void Can_convert_5_to_buzz()
 	{
-		var fizzer = new FizzBuzz();
-		
 		fizzer.Answer(5).ShouldBe("Buzz");
 	}
 }
