@@ -7,7 +7,12 @@ public class FizzBuzz
 {
 	public string Answer(int number)
 	{
-		return "Fizz";
+		if(number == 3)
+		{
+			return "Fizz";
+		}
+		
+		return "Buzz";
 	}
 }
 
