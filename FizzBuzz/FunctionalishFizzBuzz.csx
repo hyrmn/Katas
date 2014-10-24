@@ -5,19 +5,31 @@ fixie.RunAllTests();
 
 public class FizzBuzz
 {
+	private static readonly Func<int, bool> IsDivisibleBy3 = number => number % 3 == 0;
+	private static readonly Func<int, bool> IsDivisibleBy5 = number => number % 5 == 0;
+
+	private static readonly Dictionary<FizzieKey, Func<int, string>> fizzieMap = new Dictionary<FizzieKey, Func<int, string>>
+	{
+		{new FizzieKey(true, false), number => "Fizz"},
+		{new FizzieKey(false, true), number => "Buzz"},
+		{new FizzieKey(false, false), number => number.ToString()},
+	};
+
 	public string Answer(int number)
 	{
-		if(number == 3)
+		return fizzieMap[new FizzieKey(IsDivisibleBy3(number), IsDivisibleBy5(number))](number);
+	}
+
+	internal struct FizzieKey
+	{
+		internal FizzieKey(bool showFizz, bool showBuzz) : this()
 		{
-			return "Fizz";
+			ShowFizz = showFizz;
+			ShowBuzz = showBuzz;
 		}
-		
-		if(number == 5)
-		{
-			return "Buzz";
-		}
-		
-		return number.ToString();
+
+		internal bool ShowFizz { get; private set; }
+		internal bool ShowBuzz { get; private set; }
 	}
 }
 
