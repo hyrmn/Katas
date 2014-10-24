@@ -12,7 +12,12 @@ public class FizzBuzz
 			return "Fizz";
 		}
 		
-		return "Buzz";
+		if(number == 5)
+		{
+			return "Buzz";
+		}
+		
+		return number.ToString();
 	}
 }
 
@@ -28,5 +33,10 @@ public class FizzBuzzTests
 	public void Can_convert_5_to_buzz()
 	{
 		fizzer.Answer(5).ShouldBe("Buzz");
+	}
+	
+	public void Unfizzable_number_returns_self()
+	{
+		fizzer.Answer(2).ShouldBe("2");
 	}
 }
