@@ -19,4 +19,11 @@ public class FizzBuzzTests
 		
 		fizzer.Answer(3).ShouldBe("Fizz");
 	}
+	
+	public void Can_convert_5_to_buzz()
+	{
+		var fizzer = new FizzBuzz();
+		
+		fizzer.Answer(5).ShouldBe("Buzz");
+	}
 }
