@@ -51,4 +51,9 @@ public class FizzBuzzTests
 	{
 		fizzer.Answer(2).ShouldBe("2");
 	}
+	
+	public void Can_convert_15_to_fizzbuzz()
+	{
+		fizzer.Answer(15).ShouldBe("FizzBuzz");
+	}
 }
