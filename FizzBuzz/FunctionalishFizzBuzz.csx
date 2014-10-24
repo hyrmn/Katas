@@ -10,6 +10,7 @@ public class FizzBuzz
 
 	private static readonly Dictionary<FizzieKey, Func<int, string>> fizzieMap = new Dictionary<FizzieKey, Func<int, string>>
 	{
+		{new FizzieKey(true, true), number => "FizzBuzz"},
 		{new FizzieKey(true, false), number => "Fizz"},
 		{new FizzieKey(false, true), number => "Buzz"},
 		{new FizzieKey(false, false), number => number.ToString()},
